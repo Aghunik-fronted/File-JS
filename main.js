@@ -159,28 +159,89 @@
 // }
 
 // Массивы
-console.log(typeof {});
+// console.log(typeof {});
 
-let arr = ['Aghunik', 'Almida', 'Albert'];
-console.log(arr.length);
+// let arr = ['Aghunik', 'Almida', 'Albert'];
+// console.log(arr.length);
 
-arr.push('Hello');
-console.log(arr);
-arr.pop();
-console.log(arr);
+// arr.push('Hello');
+// console.log(arr);
+// arr.pop();
+// console.log(arr);
 
-arr.unshift('Start', 1236)
-console.log(arr);
-arr.shift();
-console.log(arr);
+// arr.unshift('Start', 1236)
+// console.log(arr);
+// arr.shift();
+// console.log(arr);
 
-for (item of arr) {
-  console.log(item);
+// for (item of arr) {
+//   console.log(item);
+// }
+
+// const matrix = [
+//   [1, 2, 3],
+//   [4, 5, 6],
+//   [7, 8, 9],
+// ];
+// console.log(matrix[1][1]);
+
+// console.log(1e-6);
+
+// let num = 100;
+// console.log(+num.toString(2));
+
+// let string = '42.5px';
+
+// console.log(parseInt(string)); //Переобразует строку в текст
+
+// console.log(parseFloat(string));
+
+// let string = '4254';
+// console.log(string.length);
+
+// console.log(string[string.length]);
+
+// console.log(string.charAt(10));
+
+// for (let char of string) {
+//   console.log(char)
+// };
+
+
+// string = 'Hello';
+// string[0] = 'H';
+
+// console.log(string);
+
+// console.log(string.toUpperCase());
+// console.log(string.toLowerCase());
+
+const name = 'Настя';
+function hello(str) {
+  return str[0].toUpperCase() + str.substr(1, str.length - 1).toLowerCase();
+
+};
+
+console.log(hello('нАстя'))
+
+// console.log(name.substr(1, 2));
+// console.log(name.slice(1, 4));
+// console.log(name.substring(1, 4));
+
+// function repeatStr(n, s) {
+//   let str = " ";
+//   for (let i = 0; i < n; i++) {
+//     str = str + s
+//   }
+//   return str;
+// }
+// console.log(repeatStr(2, 'Na'));
+
+function repeatStr(n, s) {
+  let str = s
+  return s.repeat(n)
 }
+console.log(repeatStr(4, 'Na'));
 
-const matrix = [
-  [1, 2, 3],
-  [4, 5, 6],
-  [7, 8, 9],
-];
-console.log(matrix[1][1]);
+// const repeatStr = (n, s) => s.repeat(n);
+
