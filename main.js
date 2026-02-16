@@ -314,3 +314,9 @@ if(btn) {
   btn.addEventListener('click', click)
 }
 console.log('click');
+const burger = document.querySelector('.burger');
+const menu = document.querySelector('.menu');
+
+burger.addEventListener('click', () => {
+  
+})
