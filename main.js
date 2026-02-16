@@ -216,13 +216,13 @@
 // console.log(string.toUpperCase());
 // console.log(string.toLowerCase());
 
-const name = 'Настя';
-function hello(str) {
-  return str[0].toUpperCase() + str.substr(1, str.length - 1).toLowerCase();
+// const name = 'Настя';
+// function hello(str) {
+//   return str[0].toUpperCase() + str.substr(1, str.length - 1).toLowerCase();
 
-};
+// };
 
-console.log(hello('нАстя'))
+// console.log(hello('нАстя'))
 
 // console.log(name.substr(1, 2));
 // console.log(name.slice(1, 4));
@@ -237,11 +237,80 @@ console.log(hello('нАстя'))
 // }
 // console.log(repeatStr(2, 'Na'));
 
-function repeatStr(n, s) {
-  let str = s
-  return s.repeat(n)
-}
-console.log(repeatStr(4, 'Na'));
+// function repeatStr(n, s) {
+//   let str = s
+//   return s.repeat(n)
+// }
+// console.log(repeatStr(4, 'Na'));
 
 // const repeatStr = (n, s) => s.repeat(n);
 
+
+
+// function nameSort(a, b, callback) {
+//     let sum = a + b;
+//     callback();
+//     alert(sum);
+// }
+
+// function hello() {
+//   alert('Вычисление завершено')
+// }
+// nameSort(1,2,hello);
+
+// function factorial(n) {
+//   if (n <= 1) {
+//     return 1;
+//   }
+//   let result = 1; 
+//   for (let i = 2; i <= n; i++) {
+//     result = result * i;
+//   }
+//   return result;
+// }
+
+// console.log(`Факториал 5 равен ${factorial(5)}`);
+
+// function power(a, b) {
+//   if (b === 0) {
+//     return 1;
+//   }
+//   return a * power(a, b-1);
+// }
+// console.log(power(2,3));
+// console.log(2**3);
+
+// function recusive() {
+//   if(condition) {
+//     return 
+//   }
+// }
+
+const elem = document.querySelector('.test');
+const elems = document.querySelectorAll('test');
+console.log(elems);
+
+let child = elem.childNodes;
+child = elem.children;
+console.log(child);
+
+let parent = elem.parentElement;
+console.log(parent);
+
+const nextSibling = elem.nextElementSibling;
+console.log(nextSibling);
+
+parent = elem.querySelector('children');
+
+
+const btn = document.querySelector('.button');
+const click = () => {
+  // alert('Click on button');
+  // btn.classList.add('red');
+  // btn.classList.remove('button');
+  btn.classList.toggle('red');
+}
+if(btn) {
+  btn.addEventListener('click', click)
+}
+console.log('click');
