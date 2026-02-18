@@ -286,37 +286,154 @@
 //   }
 // }
 
-const elem = document.querySelector('.test');
-const elems = document.querySelectorAll('test');
-console.log(elems);
+// const elem = document.querySelector('.test');
+// const elems = document.querySelectorAll('test');
+// console.log(elems);
 
-let child = elem.childNodes;
-child = elem.children;
-console.log(child);
+// let child = elem.childNodes;
+// child = elem.children;
+// console.log(child);
 
-let parent = elem.parentElement;
-console.log(parent);
+// let parent = elem.parentElement;
+// console.log(parent);
 
-const nextSibling = elem.nextElementSibling;
-console.log(nextSibling);
+// const nextSibling = elem.nextElementSibling;
+// console.log(nextSibling);
 
-parent = elem.querySelector('children');
+// parent = elem.querySelector('children');
 
 
-const btn = document.querySelector('.button');
-const click = () => {
-  // alert('Click on button');
-  // btn.classList.add('red');
-  // btn.classList.remove('button');
-  btn.classList.toggle('red');
-}
-if(btn) {
-  btn.addEventListener('click', click)
-}
-console.log('click');
-const burger = document.querySelector('.burger');
-const menu = document.querySelector('.menu');
+// const btn = document.querySelector('.button');
+// const click = () => {
+//   // alert('Click on button');
+//   // btn.classList.add('red');
+//   // btn.classList.remove('button');
+//   btn.classList.toggle('red');
+// }
+// if(btn) {
+//   btn.addEventListener('click', click)
+// }
+// console.log('click');
+// const burger = document.querySelector('.burger');
+// const menu = document.querySelector('.menu');
 
-burger.addEventListener('click', () => {
+// burger.addEventListener('click', () => {
   
+// })
+
+// const calculator = {
+//   value: 0,
+//   add(x) {
+//     this.value += x
+//     return this;
+//   },
+//   multiply(x) {
+//     this.value *= x
+//     return this;
+//   },
+//   subtract(x) {
+//     this.value -= x
+//     return this;
+//   },
+//   log() {
+//     console.log(this.value)
+//     return this;
+//   },
+// }
+
+// calculator.add(5);
+// calculator.log();
+// calculator.multiply(2);
+// calculator.subtract(5);
+// calculator.log();
+
+// function createCounter() {
+//   return {
+//     counter: 0,
+
+//     increment() {
+//         this.counter++;
+//         return this.counter;
+//     },
+//     decrement() {
+//       this.counter--;
+//       return this.counter;
+//     },
+//     getCount(){
+//       return this.counter;
+//     }
+//   }
+// }
+
+// const count = createCounter();
+// console.log(count.increment());
+// console.log(count.decrement());
+
+// const obj = {
+//   seconds: 0,
+//   minutes: 0,
+//   hours: 0,
+
+//   getTime() {
+
+//   }
+// }
+
+// const userNew = {
+//   name: 'Aghunik',
+//   getName() {
+//     console.log(this.name);
+//   },
+// }
+
+// userNew.getName()
+
+// const userNewNew = userNew;
+
+// userNewNew.name = 'NoAghunik'
+
+// userNewNew.getName();
+
+// const str = 'Строка ,Строка';
+
+// console.log(str.split().join());
+// console.log(str.split(''));
+// console.log(str.split(' '));
+// console.log(str.split(','));
+
+// const arr = ['h', 'o', 'u', 's', 'e']
+// console.log(arr.join(''));
+// console.log(arr.reverse());
+
+// const word = 'Doxod';
+
+// const isPalidrome = (word) => {
+//   if(word.toLowerCase() === word.toLowerCase().split('')).reverse 
+// }
+
+const numbers = [1,2,3,4];
+numbers.forEach((item, index, arr) => {
+  console.log(item * 2);
+  console.log(index);
+   console.log(arr);
 })
+
+let doubles = numbers.map(item => item * 2)
+
+let evenNumbers = numbers.filter(num => num % 2 === 0)
+
+console.log(doubles);
+console.log(evenNumbers);
+
+console.log(numbers.sort((a,b) => b - a))
+
+console.log(numbers.some(num => num > 7))
+console.log(numbers.every(num => num > 0))
+
+const arr1 = [1,2];
+const arr2 =[3,4];
+console.log(arr1.concat(arr2, [5,6]));
+
+const array = ['h', 'o', 'm', 'e'];
+array.splice(1, 2,'k')
+console.log(array);
