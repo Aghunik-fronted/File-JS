@@ -411,29 +411,141 @@
 //   if(word.toLowerCase() === word.toLowerCase().split('')).reverse 
 // }
 
-const numbers = [1,2,3,4];
-numbers.forEach((item, index, arr) => {
-  console.log(item * 2);
-  console.log(index);
-   console.log(arr);
-})
+// const numbers = [1,2,3,4];
+// numbers.forEach((item, index, arr) => {
+//   console.log(item * 2);
+//   console.log(index);
+//    console.log(arr);
+// })
 
-let doubles = numbers.map(item => item * 2)
+// let doubles = numbers.map(item => item * 2)
 
-let evenNumbers = numbers.filter(num => num % 2 === 0)
+// let evenNumbers = numbers.filter(num => num % 2 === 0)
 
-console.log(doubles);
-console.log(evenNumbers);
+// console.log(doubles);
+// console.log(evenNumbers);
 
-console.log(numbers.sort((a,b) => b - a))
+// console.log(numbers.sort((a,b) => b - a))
 
-console.log(numbers.some(num => num > 7))
-console.log(numbers.every(num => num > 0))
+// console.log(numbers.some(num => num > 7))
+// console.log(numbers.every(num => num > 0))
 
-const arr1 = [1,2];
-const arr2 =[3,4];
-console.log(arr1.concat(arr2, [5,6]));
+// const arr1 = [1,2];
+// const arr2 =[3,4];
+// console.log(arr1.concat(arr2, [5,6]));
 
-const array = ['h', 'o', 'm', 'e'];
-array.splice(1, 2,'k')
-console.log(array);
+// const array = ['h', 'o', 'm', 'e'];
+// array.splice(1, 2,'k')
+// console.log(array);
+
+
+// class Person {
+//   constructor(name, age) {
+//     this.name = name;
+//     this.age = age;
+//   }
+//   sayHello() {
+//     console.log(`Привет, меня зовут ${this.name}, мне ${this.age} лет`)
+//   }
+// }
+
+// const man = new Person('Агуник', 31);
+// man.sayHello();
+
+// class Worker extends Person {
+//   #balance
+//   constructor(name, age, position) {
+//       super(name, age)
+//       this.position = position;
+//       this._iq = this._iq;
+//       this.#balance = balance;
+//   }
+//   get iq() {
+//     return this._iq;
+//   }
+
+//   set(value) {
+//     if(value < 0){
+//       return 'iq не может быть отрицательным'
+//     }
+//     this._iq = value;
+//   }
+//   sayHello() {
+//     console.log(`${this.name}, я - ${this.position}`)
+//   }
+// }
+
+// const workder = new Worker('Агуник', 32, 'Программист')
+// workder.sayHello();
+// workder.iq = 100;
+
+
+// class BankAccount {
+//   constructor(name, balance) {
+//     this.name = name;
+//     this.balance = balance;
+//   }
+//   deposit(amount) {
+//       if (amount > 0) {
+//         this.balance += amount;
+//         console.log(`Счёт пополнен на  ${amount}`);
+//       } else {
+//         console.log(`Сумма должна быть положительной`);
+//       }
+//       return this
+//   }
+//   withdraw(amount) {
+//       if (amount > this.balance) {
+//         console.log(`Недостаточно средств`);
+//       } else if (amount < 0) {
+//         console.log(`Сумма снятия должна быть положительной`)
+//       } else {
+//         this.balance -= amount;
+//         console.log(`Снято ${amount}`);
+//       }
+//   }
+//   checkbalance(amount) {
+//       console.log(`Текущий баланс ${this.balance}`)
+//   }
+// }
+
+// const acc = new BankAccount('Aghunik', 1000);
+
+// acc.checkbalance();
+// acc.deposit(1500);
+// acc.withdraw(3000);
+// acc.deposit(1500);
+
+
+class User {
+  constructor(password) {
+    this._password = password;
+  }
+
+  get password() {
+    return this._password.replace(/./g, '*')
+  }
+
+  set password(value) {
+    if (value.length < 6) {
+      console.log('Пароль слишком короткий');
+      return
+    }
+  }
+
+  checkPassword(attemp) {
+    return this._password === attemp;
+  }
+}
+
+const user = new User('1234567');
+console.log(user.password);
+let newPass = prompt('Введите новый пароль');
+
+if (user.checkPassword(newPass)) {
+  alert('Пароли совпадают')
+} else {
+  user.password = newPass;
+  alert ('Пароль успешно изменён');
+}
+
