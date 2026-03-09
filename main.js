@@ -517,35 +517,129 @@
 // acc.deposit(1500);
 
 
-class User {
-  constructor(password) {
-    this._password = password;
-  }
+// class User {
+//   constructor(password) {
+//     this._password = password;
+//   }
 
-  get password() {
-    return this._password.replace(/./g, '*')
-  }
+//   get password() {
+//     return this._password.replace(/./g, '*')
+//   }
 
-  set password(value) {
-    if (value.length < 6) {
-      console.log('Пароль слишком короткий');
-      return
+//   set password(value) {
+//     if (value.length < 6) {
+//       console.log('Пароль слишком короткий');
+//       return
+//     }
+//   }
+
+//   checkPassword(attemp) {
+//     return this._password === attemp;
+//   }
+// }
+
+// const user = new User('1234567');
+// console.log(user.password);
+// let newPass = prompt('Введите новый пароль');
+
+// if (user.checkPassword(newPass)) {
+//   alert('Пароли совпадают')
+// } else {
+//   user.password = newPass;
+//   alert ('Пароль успешно изменён');
+// }
+
+// const fancy = new Fancybox({
+  
+// })
+
+const parent = document.querySelector('.parent');
+const child = document.querySelector('.child');
+
+parent.addEventListener('click', () => {
+  console.log('Click on parent');
+})
+child.addEventListener('click', () => {
+  console.log('Click on child');
+  e.stopProgration()
+})
+
+const toDoList = document.querySelector('.to-do');
+const addTaskBtn = document.querySelector('.add-tesk');
+
+addTaskBtn.addEventListener('click', () => {
+  const newLi = document.createElement('li');
+  newLi.innerHTML = 'Новая задача <button class ="delete">х</button>';
+  toDoList.appendChild(newLi);
+})
+
+toDoList.addEventListener('click', (e) => {
+    console.log(e.target)
+    if (e.target.classList.contains('delete')){
+        e.target.closest('li').remove();
     }
-  }
+})
+// const removeBtns = document.querySelectorAll('.delete');
+// removeBtns.forEach(btn => {
+//   btn.addEventListener('click', () => {
+//     btn.closest('li').remove();
+//   })
+// })
 
-  checkPassword(attemp) {
-    return this._password === attemp;
+
+const widthParam = document.querySelector('.width');
+const heightParam = document.querySelector('.height');
+
+const updateSize = () => {
+  widthParam.textContent = window.innerWidth;
+  heightParam.textContent = window.innerHeight;
+}
+updateSize();
+window.addEventListener('resize', () => {
+  updateSize();
+    // console.log('Окно поменяло размер')
+})
+
+const box = document.querySelector('.box');
+const rect = box.getBoundingClientRect();
+// console.log(rect);
+console.log(box.clientWidth);
+console.log(box.clientHeight);
+console.log(box.offsetHeight);
+console.log(box.offsetWidth);
+
+const header = document.querySelector('.header');
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 50) {
+    header.classList.add('.js-scroll')
+  } else {
+    header.classList.remove('.js-scroll')
+  }
+})
+const btnUp = document.querySelector('.button-up');
+btnUp.addEventListener('click', () => {
+  window.scrollTo(0, 0)
+})
+// window.scrollTo(0, 500);
+// setTimeout(() => {
+//   window.scrollBy(0, 500)
+// }, 1000)
+
+box.scrollIntoView({
+  behavior:'smooth',
+  block:'end'
+})
+
+const infinityScroll = () => {
+  const documentHeight = document.documentElement.scrollHeight;
+  console.log(documentHeight)
+  const scrollPosition = window.scrollY + window.innerHeight;
+  console.log(scrollPosition)
+
+  if (documentHeight - scrollPosition < 100) {
+      console.log('Почти в конце');
   }
 }
 
-const user = new User('1234567');
-console.log(user.password);
-let newPass = prompt('Введите новый пароль');
-
-if (user.checkPassword(newPass)) {
-  alert('Пароли совпадают')
-} else {
-  user.password = newPass;
-  alert ('Пароль успешно изменён');
-}
-
+window.addEventListener('scroll', infinityScroll)
+infinityScroll();
