@@ -680,41 +680,55 @@
 //     .catch(err => console.log(err))
 
 
-const API_KEY = 'dc2e56b4-9b1f-432f-8371-542669705498';
-const BASE_URL = 'https://kinopoiskapiunofficial.tech/api/';
+// const API_KEY = 'dc2e56b4-9b1f-432f-8371-542669705498';
+// const BASE_URL = 'https://kinopoiskapiunofficial.tech/api/';
 
-function searchFilms(query){
-    if (!query.trim()) return
+// function searchFilms(query){
+//     if (!query.trim()) return
 
-     fetch(`${BASE_URL}v2.1/films/search-by-keyword?keyword=${query}`,
-        {
+//      fetch(`${BASE_URL}v2.1/films/search-by-keyword?keyword=${query}`,
+//         {
 
-        headers: {
-            'X-API-KEY': API_KEY,
-            'Content-Type': 'application/json',
-        }
-      }
-     )
-     .then(response => response.json())
-     .then(json => displayMovies(json.films))
-}
+//         headers: {
+//             'X-API-KEY': API_KEY,
+//             'Content-Type': 'application/json',
+//         }
+//       }
+//      )
+//      .then(response => response.json())
+//      .then(json => displayMovies(json.films))
+// }
 
-function displayMovies(films){
-    const container = document.querySelector('.movies');
-    container.innerHTML = '';
+// function displayMovies(films){
+//     const container = document.querySelector('.movies');
+//     container.innerHTML = '';
 
-    films.slice(0, 10).forEach(film => {
-        const card = document.createElement('div');
-        card.className = 'movie-card';
-        card.innerHTML = `
-            <img src = "${film.posterUrlPreview}" alt = "${film.nameRu}">
-            <h3>${film.nameRu}</h3>
-        `
-        container.appendChild(card);
-    })
-}
-const searchBtn =document.querySelector('.search-button');
-searchBtn.addEventListener('click', () => {
-    const query = document.querySelector('.search-input').value
-    searchFilms(query)
+//     films.slice(0, 10).forEach(film => {
+//         const card = document.createElement('div');
+//         card.className = 'movie-card';
+//         card.innerHTML = `
+//             <img src = "${film.posterUrlPreview}" alt = "${film.nameRu}">
+//             <h3>${film.nameRu}</h3>
+//         `
+//         container.appendChild(card);
+//     })
+// }
+// const searchBtn =document.querySelector('.search-button');
+// searchBtn.addEventListener('click', () => {
+//     const query = document.querySelector('.search-input').value
+//     searchFilms(query)
+// })
+
+const form = document.querySelector('form');
+form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    // const name = document.querySelector('[name="username"]').value;
+    // const email = document.querySelector('[name="email"]').value;
+    // console.log({name, email});
+    const formData = new FormData(form)
+    for (let [key, value] of formData.entries()) {
+        console.log(`${key} : ${value}`);
+    }
 })
+
+
